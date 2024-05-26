@@ -1,5 +1,5 @@
 // const BASE_URL = process.env.REACT_APP_API_BASE_URL
-const BASE_URL = "https://naughty-smock-tuna.cyclic.app/api/v1"
+const BASE_URL = "https://cinezen.onrender.com"
 
 // movie ENDPOINTS
 export const endpoints = {
