@@ -74,9 +74,9 @@ const AddMovie = () => {
     };
 
     const handleImageChange = (event) => {
-     
+      
       setImage(event.target.files[0])
-       
+      
  
 
     };
@@ -88,14 +88,7 @@ function changeMinutes(e){
     setDurationmin(e.target.value)
   }
 }
-const handleReset = () => {
-  if (inputRef.current) {
-    inputRef.current.value = "";
-    inputRef.current.type = "text";
-    inputRef.current.type = "file";
-     setImage(false);
-  }
-};
+
   return (
     <div className='min-h-[100vh] bg-bg-1 w-[100vw] flex flex-wrap flex-col items-center'>
           <div className='w-[70%]  bg-bg-4   shadow-lg shadow-black rounded-xl md:my-8 p-4'>
@@ -104,7 +97,7 @@ const handleReset = () => {
                   
                   <div className='cursor-pointer'>
            
-           {image ?  (<div className='relative' ><img src={URL.createObjectURL(image)}  className='bg-bg-3 border border-textcolorb/80 sm:w-52 sm:h-80 w-[90%] h-[80vw] rounded-md hover:shadow-4xl  shadow-2xl bg-richblack-800  '/><div onClick={handleReset} className=' bg-textcolorb rounded-full p-[0.5%] hover:p-[1%] hover:shadow-black hover:shadow text-white absolute -top-1 -right-1'><TiDelete/></div> </div>)
+           {image ?  (<div className='relative' ><img src={URL.createObjectURL(image)} className='sm:w-52 sm:h-80 w-[90%] h-[8vw] rounded-md  shadow-2xl'/><div onClick={()=>setImage(false)} className=' bg-textcolorb rounded-full p-[0.5%] hover:p-[1%] hover:shadow-black hover:shadow text-white absolute -top-1 -right-1'><TiDelete/></div> </div>)
             :( <div onClick={handleImageClick} 
              className='bg-bg-3 border border-textcolorb/80 sm:w-52 sm:h-80 w-[90%] h-[80vw] rounded-md hover:shadow-4xl  shadow-2xl bg-richblack-800 flex gap-3 flex-col items-center justify-center p-4'>
                   <div  className='text-textcolorb  text-3xl'>

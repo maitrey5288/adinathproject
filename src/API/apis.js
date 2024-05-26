@@ -1,5 +1,4 @@
-// const BASE_URL = process.env.REACT_APP_API_BASE_URL
-const BASE_URL = "https://cinezen.onrender.com/api/v1"
+const BASE_URL = process.env.REACT_APP_API_BASE_URL
 
 // movie ENDPOINTS
 export const endpoints = {

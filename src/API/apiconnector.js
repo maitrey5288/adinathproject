@@ -1,5 +1,7 @@
 import axios from "axios"
- 
+import { useContext } from "react";
+import { UserContext } from "../context/Context";
+
 export const axiosInstance = axios.create({});
 
 function getToken(){

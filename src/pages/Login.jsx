@@ -5,9 +5,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import toast from 'react-hot-toast';
 import { UserContext } from '../context/Context';
- 
+import { useMediaQuery } from 'react-responsive';
 const Login = () => {
-  
+  const small = useMediaQuery({ query: '(max-width: 300px)' })
   const{setUser} =useContext(UserContext) 
     const navigate = useNavigate();
     const {LOGIN_API} = endpoints;
@@ -30,7 +30,7 @@ const Login = () => {
    async function submitHandler (e) {
       e.preventDefault()
       try {
-          toast.loading("Loading")
+            
         setLoading(true);
         const res = await apiConnector("POST",LOGIN_API , {
           formData         
@@ -40,14 +40,11 @@ const Login = () => {
         localStorage.setItem("user", JSON.stringify(res.data.user))
         setUser(res.data.user);
         setLoading(false);
-        toast.dismiss();
         toast.success("Loged in successfully")
         navigate('/')
-      } catch (e) {
-      toast.dismiss();
+    } catch (e) {
        toast.error(e.response.data?.message);
        toast.error("Signup again");
-       console.log("error",e);
         setLoading(false);
       }
     }
@@ -111,7 +108,6 @@ const Login = () => {
          
         </div>
         <button
-        disabled={loading}
           type="submit"
           className="mt-6 button-bg w-full rounded-[8px] text-white py-[8px] p-1.5 sm:p-[12px] font-medium text-richblack-900"
         >
@@ -127,7 +123,7 @@ const Login = () => {
          
         </div>
       </form>
-      </div> 
+      </div>
     )
   
 }
