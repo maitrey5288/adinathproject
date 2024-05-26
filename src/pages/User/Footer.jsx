@@ -24,7 +24,7 @@ const Footer = () => {
         <FaInstagram/>
         </Link> 
       </div>
-      <p className='text-gray-400/80 '>© 2023 Maitrey Chitale. All rights reserved.</p>
+      <p className='text-gray-400/80 '>© 2024 Adinath Pendse. All rights reserved.</p>
 
 
 
